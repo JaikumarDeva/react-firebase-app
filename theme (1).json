@@ -1,0 +1,8 @@
+{
+    fontColor: #fff,
+    backgroundColor: #35BDBF,
+    BtnTextColor: #687FB8,
+    BtnBgcolor: #FF6363,
+    fontSize: 18px,
+    titleColor: #AA3333,
+}
