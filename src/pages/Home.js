@@ -12,12 +12,12 @@ import { Modal } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App({importedData}) {
-    const [fColor, setFColor] = useState("");
-    const [BGColor, setBGColor] = useState("");
-    const [BtnTextColor1, setBtntextColor] = useState("");
-    const [BtnbgColor, setBtnbgColor] = useState("");
-    const [fontSize, setfontSize] = useState("");
-    const [titleColor, settitleColor] = useState("");
+    let [fColor, setFColor] = useState("");
+    let [BGColor, setBGColor] = useState("");
+    let [BtnTextColor1, setBtntextColor] = useState("");
+    let [BtnbgColor, setBtnbgColor] = useState("");
+    let [fontSize, setfontSize] = useState("");
+    let [titleColor, settitleColor] = useState("");
     
     //const [datafromImport, setdatafromImport] = useState("");
     useEffect(() => {
