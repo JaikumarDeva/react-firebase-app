@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SketchPicker } from 'react-color';
 
-function BtnBgColor({sendDataToParent}) {
+function BtnBgColor({sendDataToParent,importdata}) {
     const [BtnBgColor, setBtnBgColor] = useState("#0081c6");
     const [displayColorPicker, setDisplayColorPicker] = useState(false);
     const popover = useRef();
@@ -14,6 +14,11 @@ function BtnBgColor({sendDataToParent}) {
     const handleClick = () => {
       setDisplayColorPicker(true);
     };
+    useEffect(() => {
+        if(importdata) {
+            setBtnBgColor(importdata)
+        }
+    },[importdata])
 
     useEffect(() => {
         const handleClickOutside = (event) => {
