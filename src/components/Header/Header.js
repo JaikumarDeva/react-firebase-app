@@ -7,25 +7,29 @@ import "./Header.css";
 const Header = () => {
     const location = useLocation();
 
-    const handleDownload = async () => {
+    async function handleDownload() {
         const response = await fetch('http://206.189.135.207:3001/api/get-colors');
         const data = await response.json();
-      
-        // Remove the color_id field from each item in the data array
+    
+        // Convert JSON data to SCSS
+        let scss = '';
         data.forEach(item => {
-          delete item.color_id;
-        });
-      
-        const json = JSON.stringify(data);
-        const blob = new Blob([json],{type:'application/json'});
+            for (let key in item) {
+              if (typeof item[key] === 'string') {
+                scss += `$${key}: ${item[key]};\n`;
+              }
+            }
+          });
+    
+        const blob = new Blob([scss], {type: 'text/scss'});
         const href = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = href;
-        link.download = 'theme-builder.json';
+        link.download = 'theme-builder.scss';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-      }
+    }
     
     return (
     
