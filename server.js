@@ -37,7 +37,7 @@ app.get('/api/get-colors', (req, res) => {
 });
 
 app.post('/api/update-color', (req, res) => {
-    const {  fontColor, backgroundColor, BtnTextColor, BtnBgcolor, fontSize } = req.body;
+    const {  fontColor, backgroundColor, BtnTextColor, BtnBgcolor, fontSize, titleColor } = req.body;
   
   // Get the id of the latest record
   connection.query('SELECT color_id FROM color_selection ORDER BY color_id DESC LIMIT 1', (err, results) => {
@@ -64,7 +64,7 @@ app.post('/api/update-color', (req, res) => {
         if (BtnTextColor) colors.BtnTextColor = BtnTextColor;
         if (BtnBgcolor) colors.BtnBgcolor = BtnBgcolor;
         if (fontSize) colors.fontSize = fontSize;
-  
+        if (titleColor) colors.titleColor = titleColor;
         // Write updated color data back to file
         fs.writeFile('colors.json', JSON.stringify(colors, null, 4), (err) => {
           if (err) {
@@ -80,12 +80,13 @@ app.post('/api/update-color', (req, res) => {
             BtnTextColor: BtnTextColor !== null ? BtnTextColor : currentValues.BtnTextColor,
             BtnBgcolor: BtnBgcolor !== null ? BtnBgcolor : currentValues.BtnBgcolor,
             fontSize: fontSize !== null ? fontSize : currentValues.fontSize,
+            titleColor: titleColor !== null ? titleColor : currentValues.titleColor,
         };
 
        // Update the values in the database
-       const updateQuery = 'UPDATE color_selection SET fontColor = ?, backgroundColor = ?, BtnTextColor = ?, BtnBgcolor = ?, fontSize = ? WHERE color_id = ?';
+       const updateQuery = 'UPDATE color_selection SET fontColor = ?, backgroundColor = ?, BtnTextColor = ?, BtnBgcolor = ?, fontSize = ?, titleColor = ? WHERE color_id = ?';
         console.log(newValues,'newValues');
-       const updateValues = [newValues.fontColor, newValues.backgroundColor, newValues.BtnTextColor, newValues.BtnBgcolor, newValues.fontSize, color_id];
+       const updateValues = [newValues.fontColor, newValues.backgroundColor, newValues.BtnTextColor, newValues.BtnBgcolor, newValues.fontSize,newValues.titleColor, color_id];
 
        connection.query(updateQuery, updateValues, (err, result) => {
            if (err) {
