@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SketchPicker } from 'react-color';
 
-function FontColor({sendDataToParent}) {
+function FontColor({sendDataToParent,importdata}) {
     const [fontColor, setFontColor] = useState("#0081c6");
     const [displayColorPicker, setDisplayColorPicker] = useState(false);
     const popover = useRef();
@@ -16,7 +16,11 @@ function FontColor({sendDataToParent}) {
     const handleClick = () => {
       setDisplayColorPicker(true);
     };
-
+    useEffect(() => {
+        if(importdata) {
+        setFontColor(importdata)
+        }
+    },[importdata])
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (popover.current && !popover.current.contains(event.target)) {
@@ -33,7 +37,7 @@ function FontColor({sendDataToParent}) {
     return (
         <form>
         <label>
-        <span className='lable-text'>Text Color:</span>
+        <span className='lable-text'>Primary Color:</span>
         <input type="text" value={fontColor} onClick={handleClick} readOnly />
         { displayColorPicker ? <div className="popover" ref={popover}>
             <SketchPicker color={fontColor} onChangeComplete={handleBtnBgColorChange} />
