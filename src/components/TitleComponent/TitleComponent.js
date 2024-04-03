@@ -35,7 +35,7 @@ function TitleComponent({sendDataToParent,importdata}) {
     return (
         <form>
         <label>
-        <span className='lable-text'>Title color:</span>
+        <span className='lable-text'>Heading Text color:</span>
         <input type="text" value={titleColor} onClick={handleClick} readOnly />
         { displayColorPicker ? <div className="popover" ref={popover}>
             <SketchPicker color={titleColor} onChangeComplete={handleTitleColorChange} />

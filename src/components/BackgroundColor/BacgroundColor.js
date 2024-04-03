@@ -35,7 +35,7 @@ function BackgroundColor({sendDataToParent,importdata}) {
     return (
         <form>
         <label>
-        <span className='lable-text'>Background Color:</span>
+        <span className='lable-text'>Background color:</span>
         <input type="text" value={BackgroundColor} onClick={handleClick} readOnly />
         { displayColorPicker ? <div className="popover" ref={popover}>
             <SketchPicker color={BackgroundColor} onChangeComplete={handleBackgroundColorChange} />

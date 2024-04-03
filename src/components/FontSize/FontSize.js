@@ -15,7 +15,7 @@ function FontSize({sendDataToParent,importdata}) {
     return (
         <form>
         <label>
-        <span className='lable-text'>Primary Font Size:</span>
+        <span className='lable-text'>Primary Font size:</span>
           <div className='color-box'><input type="input" value={FontSize} onChange={handleBackgroundColorChange} />
         </div></label>
         {/* <input type="submit" value="Submit" /> */}

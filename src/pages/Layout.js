@@ -74,15 +74,15 @@ function Layout({sendDataToParent}) {
                 <img src={logo} className="img-fluid" />
             </div>
         <br/>
-        <p>Here you go...if you want to change/import theme from here, you can select one of the following options:</p>
+        <p>The Theme Provider allows you to customize and create new custom themes with absolute ease. select one of the following options:</p>
         <br/>
         <div className="text-center">
         <div className="flex-wrapper">
             <div onClick={() => navigate("/home")} className="select_base_theme">
-                Select Base Theme
+                Select a Theme
             </div>
             <div onClick={handleImportClick} className="select_base_theme">
-               import a Theme
+               Import a Theme
             </div>
         </div>
         </div>

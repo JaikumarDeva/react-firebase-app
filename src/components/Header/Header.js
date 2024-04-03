@@ -37,7 +37,7 @@ const Header = () => {
                 <div className='row'>
                     <div className='logo'>
                         <a href='/'>
-                            <h1>Theme Builder</h1> 
+                            <h1>Theme Provider Tool</h1> 
                         </a>
                     </div>
                     <div className='downloadJson'>

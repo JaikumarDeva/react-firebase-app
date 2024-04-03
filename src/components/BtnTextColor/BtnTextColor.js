@@ -35,7 +35,7 @@ function BtnTextColor({sendDataToParent,importdata}) {
     return (
         <form>
         <label>
-        <span className='lable-text'>Btn Text color:</span>
+        <span className='lable-text'>Button Text color:</span>
         <input type="text" value={BtnTextColor1} onClick={handleClick} readOnly />
         { displayColorPicker ? <div className="popover" ref={popover}>
             <SketchPicker color={BtnTextColor1} onChangeComplete={handleBtnBgColorChange} />

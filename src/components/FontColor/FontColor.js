@@ -37,7 +37,7 @@ function FontColor({sendDataToParent,importdata}) {
     return (
         <form>
         <label>
-        <span className='lable-text'>Primary Color:</span>
+        <span className='lable-text'>Accent Color:</span>
         <input type="text" value={fontColor} onClick={handleClick} readOnly />
         { displayColorPicker ? <div className="popover" ref={popover}>
             <SketchPicker color={fontColor} onChangeComplete={handleBtnBgColorChange} />
