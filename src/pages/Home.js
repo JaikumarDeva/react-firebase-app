@@ -87,14 +87,14 @@ function App({importedData}) {
       let BtnTextColor1 = data.BtnTextColor;
       let BtnbgColor = data.BtnBgcolor;
       let fontSize = data.fontSize;
-      let titlColor = data.titleColor;
+      let titleColor = data.titleColor;
       localStorage.setItem('color_id', color_id);
       localStorage.setItem('fColor', fColor);
       localStorage.setItem('BGColor', BGColor);
       localStorage.setItem('BtnTextColor1', BtnTextColor1);
       localStorage.setItem('BtnbgColor', BtnbgColor);
       localStorage.setItem('fontSize', fontSize);
-      localStorage.setItem('titlColor', titlColor);
+      localStorage.setItem('titleColor', titleColor);
     })
     .catch(error => {
       console.error('Error:', error);
