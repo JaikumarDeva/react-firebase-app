@@ -2,7 +2,7 @@ import React from 'react';
 import banner from './sunraise.jpg';
 
 function LeftSideComponent({ fColor, BtnTextColor1, BtnbgColor, fontSize, titleColor }) {
-  console.log(titleColor,'titlColor');
+  console.log(titleColor,'titleColor');
   return (
     <>
      <h3 className="cmp-title" style={{color: titleColor}}>Teaser component</h3>
